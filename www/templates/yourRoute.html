@@ -1,0 +1,10 @@
+<ion-view title="Your route" id="page2">
+	<ion-content padding="true" class="has-header" scroll="false">
+		<ng-map zoom="14" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
+			<directions draggable="true" panel="directions-panel" travel-mode="DRIVING" origin="{{from_latitude}}, {{from_longitude}}" destination="{{to_latitude}}, {{to_longitude}}"></directions>
+			<custom-marker position="current-position"><div style="width: 22px; height: 22px; border: 3px solid #FFF; background-color: #2196F3; box-shadow: 1px 1px 1px #AAA; border-radius: 50%;"></div></custom-marker>
+		</ng-map>
+		<span style="position: fixed; top: 50px; right: 15px; padding: 8px; background-color: #FFF; box-shadow: 1px 1px 1px #AAA;">{{ map.directionsRenderers[0].directions.routes[0].legs[0].distance.text }}</span>
+		<span style="position: fixed; top: 95px; right: 15px; padding: 8px; background-color: #FFF; box-shadow: 1px 1px 1px #AAA;">{{ map.directionsRenderers[0].directions.routes[0].legs[0].duration.text }}</span>
+	</ion-content>
+</ion-view>

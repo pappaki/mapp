@@ -1,0 +1,20 @@
+<ion-view title="Trip planner" id="page1">
+    <ion-content padding="true" style="background: url(img/jD1NoOWHSxeQHfxPmGbI_02.jpg) no-repeat center;background-size:cover;" class="has-header">
+        <div class="spacer" style="width: 300px; height: 92px;"></div>
+        <form id="tripPlanner-form3" class="list" name="destination_form">
+            <label class="item item-input" id="tripPlanner-input3">
+                <span class="input-label">Starting Point</span>
+                <input type="text" placeholder="From" ng-model="destination.from" name="from" g-places-autocomplete force-selection="true" >
+            </label>
+            <div class="spacer" style="width: 300px; height: 18px;"></div>
+        </form>
+        <form id="tripPlanner-form4" class="list">
+            <label class="item item-input" id="tripPlanner-input4">
+                <span class="input-label">Destination</span>
+                <input type="text" placeholder="To" ng-model="destination.to" name="to" g-places-autocomplete force-selection="true" >
+            </label>
+        </form>
+        <div class="spacer" style="width: 300px; height: 181px;"></div>
+        <a ui-sref="yourRoute({from_latitude: destination.from.geometry.location.lat(), from_longitude: destination.from.geometry.location.lng(), to_latitude: destination.to.geometry.location.lat(), to_longitude: destination.to.geometry.location.lng()})" id="tripPlanner-button1" style="border-radius:0px 0px 0px 0px;" class="button button-positive  button-block" ng-disabled="destination.from == null || destination.to == null">Start</a>
+    </ion-content>
+</ion-view>
